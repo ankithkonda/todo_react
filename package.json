@@ -1,0 +1,31 @@
+{
+  "name": "lti-react-php-base",
+  "version": "1.0.0",
+  "description": "LTI Base using react and php",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UQ-UQx/LTI-React-PHP-Base.git"
+  },
+  "author": "Ankith Konda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UQ-UQx/LTI-React-PHP-Base/issues"
+  },
+  "homepage": "https://github.com/UQ-UQx/LTI-React-PHP-Base#readme",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "webpack": "^2.2.1"
+  }
+}
