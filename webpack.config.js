@@ -5,7 +5,7 @@ module.exports = {
 
     entry: "./src/index.js",
     output: {
-        path:"dist/assets",
+        path:"public/assets",
         filename:"bundle.js",
         publicPath:"assets"
     },
@@ -14,10 +14,10 @@ module.exports = {
 		// reloads browser when the watched files change
 		new BrowserSyncPlugin({
 			// use existing Apache virtual host
-			proxy: 'http://localhost:8888/',
+			proxy: 'http://localhost:80/',
 			tunnel: false,
 			// watch the built files and the index file
-			files: ['dist/assets/*', './index.php', './api/*.php']
+			files: ['public/assets/*', './index.php', './api/*.php']
 		}),
 
 
@@ -31,6 +31,11 @@ module.exports = {
                 query: {
                     "presets": ["latest", "stage-0", "react"]
                 }
+            },
+            {
+                test: /\.json$/,
+                exclude: /(node_modules)/,
+                loader:"json-loader",
             }
         ]
     }

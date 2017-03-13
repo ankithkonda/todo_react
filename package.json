@@ -4,7 +4,7 @@
   "description": "LTI Base using react and php",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,11 @@
     "babel-preset-stage-0": "^6.22.0",
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
+    "json-loader": "^0.5.4",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
