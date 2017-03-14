@@ -34,7 +34,8 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
                 query: {
-                  "presets": ["latest", "stage-0", "react"]
+                  presets: ["latest", "stage-0", "react"],
+                  plugins: ["react-html-attrs", "transform-class-properties", "transform-decorators-legacy"]
                 }
             },
             {
