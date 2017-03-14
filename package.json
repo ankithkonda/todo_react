@@ -4,8 +4,8 @@
   "description": "LTI Base using react and php",
   "main": "index.js",
   "scripts": {
-    "start": "npm install & webpack --watch",
-    "build": "npm install & webpack -p --config ./webpack-production.config.js"
+    "start": "webpack --watch",
+    "build": "webpack -p --config ./webpack-production.config.js"
   },
   "repository": {
     "type": "git",

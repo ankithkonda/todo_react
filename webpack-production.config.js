@@ -6,7 +6,7 @@ var webpackConfig = require('./webpack.config.js');
 webpackConfig.module.loaders.push({
 	test: /\.js$/,
 	exclude: /node_modules/,
-	loader: 'strip-loader?strip[]=console.log!babel-loader'
+	loader: 'strip-loader?strip[]=console.log'
 });
 
 
