@@ -7,13 +7,13 @@ module.exports = {
     output: {
         path:"public/assets",
         filename:"bundle.js",
-        publicPath:"assets"
+        publicPath:"public/assets/"
     },
     plugins: [
         // reloads browser when the watched files change
         new BrowserSyncPlugin({
             // use existing Apache virtual host
-            proxy: 'http://localhost:80/',
+            proxy: 'http://localhost:8888/',
             tunnel: false,
             // watch the built files and the index file
             files: ['public/assets/*', './index.php', './api/*.php']
