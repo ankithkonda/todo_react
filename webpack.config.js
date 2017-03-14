@@ -1,8 +1,8 @@
 var webpack = require("webpack");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-
     entry: "./src/index.js",
     output: {
         path:"public/assets",
@@ -10,18 +10,23 @@ module.exports = {
         publicPath:"assets"
     },
     plugins: [
+        // reloads browser when the watched files change
+        new BrowserSyncPlugin({
+            // use existing Apache virtual host
+            proxy: 'http://localhost:80/',
+            tunnel: false,
+            // watch the built files and the index file
+            files: ['public/assets/*', './index.php', './api/*.php']
+        }),
 
-		// reloads browser when the watched files change
-		new BrowserSyncPlugin({
-			// use existing Apache virtual host
-			proxy: 'http://localhost:80/',
-			tunnel: false,
-			// watch the built files and the index file
-			files: ['public/assets/*', './index.php', './api/*.php']
-		}),
+        new webpack.ProvidePlugin({
+            jQuery : 'jquery',
+            $ : 'jquery',
+            jquery : 'jquery',
+            _ : 'lodash'
+        })
 
-
-	],
+    ],
     module:{
         loaders:[
             {
@@ -29,13 +34,46 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
                 query: {
-                    "presets": ["latest", "stage-0", "react"]
+                  "presets": ["latest", "stage-0", "react"]
                 }
             },
             {
                 test: /\.json$/,
                 exclude: /(node_modules)/,
                 loader:"json-loader",
+            },
+            {
+                test: /\.scss$/,
+                exclude: /(node_modules)/,
+                loader:"style-loader!css-loader!autoprefixer-loader!sass-loader"
+            },
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.png$/,
+                loader: "url-loader?limit=100000"
+            },
+            {
+                test: /\.jpg$/,
+                loader: "file-loader"
+            },
+            {
+                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+            },
+            {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
             }
         ]
     }
