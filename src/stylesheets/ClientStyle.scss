@@ -1,0 +1,8 @@
+@import './CONSTANTS';
+@import './MIXINS';
+
+.client-component-container {
+    //background-color: $red;
+    margin: 0 auto;
+    width: 800px;
+}

@@ -1,0 +1,8 @@
+@import './CONSTANTS';
+@import './MIXINS';
+
+.filteroptions-component-container {
+    background-color: $blue;
+    margin: 0 auto;
+    width: 100%;
+}

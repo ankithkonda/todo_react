@@ -1,0 +1,9 @@
+@import './CONSTANTS';
+@import './MIXINS';
+
+.todolistitemoptions-component-container {
+    background-color: $fluro-green;
+    margin: 0 auto;
+    min-width: 500px;
+    width: 70%;
+}

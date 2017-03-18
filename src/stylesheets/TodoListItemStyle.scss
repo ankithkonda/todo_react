@@ -1,0 +1,8 @@
+@import './CONSTANTS';
+@import './MIXINS';
+
+.todolistitem-component-container {
+    background-color: $light-green;
+    margin: 0 auto;
+    width: 100%;
+}

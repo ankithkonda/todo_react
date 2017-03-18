@@ -1,6 +1,12 @@
+import '../../stylesheets/ClientStyle.scss'
+
+
 import React from "react"
 import { connect } from "react-redux"
 
+import CreateItem from "./CreateItem"
+import FilterOptions from "./FilterOptions"
+import TodoList from "./TodoList"
 
 @connect((store) => {
 
@@ -13,11 +19,11 @@ export default class Client extends React.Component {
 
     render(){
 
-        // var layer = this.getLayer.bind(this);
-        // console.log(layer);
-        return (<div className="Client_component">
+        return (<div className="client-component-container">
 
-                Client
+                <CreateItem />
+                <FilterOptions />
+                <TodoList />
 
         </div>);
     }

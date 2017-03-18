@@ -1,0 +1,8 @@
+@import './CONSTANTS';
+@import './MIXINS';
+
+.createtask-component-container {
+    background-color: $light-red;
+    margin: 0 auto;
+    width: 100%;
+}
